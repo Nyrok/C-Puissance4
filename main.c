@@ -173,16 +173,16 @@ int	game_over(void)
 
 	// Check diagonale inverse 
 	i = 0;
-	while (i < SIZE - 1)
+	while (i < SIZE - 4)
 	{
 		j = SIZE - 1;
-		while (j >= 3)
+		while (j >= 4)
 		{
-			if (board[i][j] != ' ' && board[i][j] == board[i - 1][j - 1] && board[i][j] == board[i - 2][j - 2] && board[i][j] == board[i - 3][j - 3])
+			if (board[i][j] != ' ' && board[i][j] == board[i + 1][j - 1] && board[i][j] == board[i + 2][j - 2] && board[i][j] == board[i + 3][j - 3])
 				return board[i][j];
 			j--;
 		}
-		i++;
+		i--;
 	}
 
 	// Le jeu continue
