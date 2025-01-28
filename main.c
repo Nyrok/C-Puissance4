@@ -1,3 +1,4 @@
+// ldd: -lncurses
 #include <ncurses.h>
 #include <time.h>
 #include <stdlib.h>
@@ -89,6 +90,8 @@ int	get_col(void)
 			break;
 		if (c >= 'A' && c <= 'A' + SIZE - 1)
 			return (c);
+		else if (c >= 'a' && c <= 'a' + SIZE - 1)
+			return (c - 32);
 	}
 	return (-1);
 }
@@ -115,9 +118,6 @@ int	add_coin(int col, int player)
 		}
 		i++;
 	}
-	move(0, 0);
-	printw("good");
-	refresh();
 	if(player + 1 == PLAYERS)
 		return (0);
 	return (player + 1);
