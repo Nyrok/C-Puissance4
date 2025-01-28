@@ -158,10 +158,10 @@ int	game_over(void)
 
 	// Check diagonale 
 	i = 0;
-	while (i < SIZE - 4)
+	while (i < SIZE - 3)
 	{
 		j = 0;
-		while (j < SIZE - 4)
+		while (j < SIZE - 3)
 		{
 			if (board[i][j] != ' ' && board[i][j] == board[i + 1][j + 1] && board[i][j] == board[i + 2][j + 2] && board[i][j] == board[i + 3][j + 3])
 				return board[i][j];
@@ -173,16 +173,16 @@ int	game_over(void)
 
 	// Check diagonale inverse 
 	i = 0;
-	while (i < SIZE - 4)
+	while (i < SIZE - 3)
 	{
 		j = SIZE - 1;
-		while (j >= 4)
+		while (j >= 3)
 		{
 			if (board[i][j] != ' ' && board[i][j] == board[i + 1][j - 1] && board[i][j] == board[i + 2][j - 2] && board[i][j] == board[i + 3][j - 3])
 				return board[i][j];
 			j--;
 		}
-		i--;
+		i++;
 	}
 
 	// Le jeu continue
